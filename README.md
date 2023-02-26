@@ -1,2 +1,2 @@
 # autoinstall
-UEFI&&boot  autoinstall liunx
+UEFI&&boot  autoinstall ubuntu_server
