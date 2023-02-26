@@ -9,7 +9,12 @@ unzip tftp.zip
 systemctl stop tftpd-hpa
 systemctl stop systemd-resolved
 apt-get -y install dnsmasq apache2 whois
-pxe_default_server='10.0.0.150'
+pxe_server_ip='10.0.0.3'
+iso_name='ubuntu-20.04.2-live-server-amd64.iso'
+sed -i s/10.0.0.3/$pxe_server_ip/g /root/autoinstall/tftpboot/grub/grub.cfg
+sed -i s/ubuntu-20.04.2-live-server-amd64.iso/$iso_name/g /root/autoinstall/tftpboot/grub/grub.cfg
+sed -i s/10.0.0.3/$pxe_server_ip/g /root/autoinstall/tftpboot/pxelinux.cfg/default
+sed -i s/ubuntu-20.04.2-live-server-amd64.iso/$iso_name/g /root/autoinstall/tftpboot/pxelinux.cfg/default
 real_name='ub'
 #passwd 加密方法
 user_passwd=`mkpasswd -m sha-512 '123456'`
