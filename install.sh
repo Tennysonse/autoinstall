@@ -4,7 +4,6 @@ systemctl stop systemd-resolved
 apt install selinux-utils -y
 setenforce 0 && getenforce
 setenforce 0 && getenforce
-cd /root/autoinstall
 unzip tftp.zip
 systemctl stop tftpd-hpa
 systemctl stop systemd-resolved
